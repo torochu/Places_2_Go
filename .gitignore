@@ -4,12 +4,24 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
+# Ignore the database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
+/config/secrets.yml
+/config/database.yml
+
+# Ignore .csv file & .swp temp file
+/db/mssql_csv/*
+*.swp
+*.swo
+erd.pdf
+tags
+.vim-bookmarks
+.DS_Store
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -19,10 +31,7 @@
 
 /node_modules
 /yarn-error.log
-
 .byebug_history
+/public/
 /public/packs
-/public/packs-test
 /node_modules
-yarn-debug.log*
-.yarn-integrity
