@@ -17,6 +17,16 @@ class PlacesController < ApplicationController
   def show
     @place = Place.find(params[:id])
   end
+
+  def edit
+    @place = Place.find(params[:id])
+  end
+  
+  def update
+    @place = Place.find(params[:id])
+    @place.update(place_params)
+    redirect_to place_path(@place), notice: "Update successfully"
+  end
   
   
   private
