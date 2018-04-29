@@ -2,6 +2,7 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.all
+    flash[:dark] = "Title of a longer featured blog post"
   end
 
   def new
