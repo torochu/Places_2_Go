@@ -10,49 +10,67 @@
   </head>
 
   <body>
-      <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-      <h5 class="my-0 mr-md-auto font-weight-normal">Places<i>2</i>Go</h5>
-      <nav class="my-2 my-md-0 mr-md-3">
-        
-        <%= link_to "溜小孩", places_path, class: "p-2 text-dark" %>
-        <a class="p-2 text-dark" href="#">人氣地點</a>
-        <a class="p-2 text-dark" href="#">最新地點</a>
-        <a class="p-2 text-dark" href="#">說明</a>
 
-        <ul class="nav navbar-nav">
-          <% if user_signed_in? %>
-            <%= yield :right_nav %>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  <%#= current_user.username %>
-                    <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <%= link_to "Settings", edit_user_registration_path %>
-                  </li>
-                  <li role="separator" class="divider"></li>
-                  <li>
-                    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-                  </li>
-                </ul>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-white border-bottom box-shadow">
+  <a class="navbar-brand" href="#">Places2Go</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+
+
+
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+        <%= yield :right_nav %>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <%= current_user.username %>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <%= link_to "Settings", edit_user_registration_path %>
               </li>
-              <% else %>
-                <li>
-        
-                  <%= link_to "註冊", new_user_registration_path, class:"btn btn-outline-primary" %>
-                </li>
-                <li>
-        
-                  <%= link_to "登入", new_user_session_path, class:"btn btn-outline-primary" %>
-                </li>
-                <% end %>
-        </ul>
-      </nav>
-      
-      
-    </div>
-    
+              <li role="separator" class="divider"></li>
+              <li>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+          <% else %>
+            <li>
+              <%= link_to "Sign Up", new_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to "Login", new_user_session_path %>
+            </li>
+            <% end %>
+    </ul>
+
+
+    <ul class="nav navbar-nav navbar-right">
+      <li> </li>
+    </ul>
+
+
+  </div>
+</nav>
 
 
     <div class="container">
@@ -71,7 +89,34 @@
             <a class="text-muted" href="#">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
             </a>
-            <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                <ul class="nav navbar-nav navbar-right">
+                  <% if user_signed_in? %>
+                    <%= yield :right_nav %>
+                
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                          <%= current_user.username %>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <%= link_to "Settings", edit_user_registration_path %>
+                          </li>
+                          <li role="separator" class="divider"></li>
+                          <li>
+                            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+                          </li>
+                        </ul>
+                      </li>
+                      <% else %>
+                        <li>
+                          <%= link_to "Sign Up", new_user_registration_path %>
+                        </li>
+                        <li>
+                          <%= link_to "Login", new_user_session_path %>
+                        </li>
+                        <% end %>
+                </ul>
           </div>
         </div>
       </header>
@@ -95,14 +140,16 @@
         </nav>
       </div>
 
-      <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-        <div class="col-md-6 px-0">
-          <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-          <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-          <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+      <!-- JUMBOTRON
+        <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+          <div class="col-md-6 px-0">
+            <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
+            <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
+            <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+          </div>
         </div>
-      </div>
-
+      -->
+      <hr>
       </div><!-- /.row -->
 
       <div class="container">
@@ -110,6 +157,11 @@
       </div>
     </main><!-- /.container -->
 
+
+
+
+
+    
     <div class="container">
 
 
