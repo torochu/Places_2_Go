@@ -13,63 +13,59 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light bg-white border-bottom box-shadow">
-  <a class="navbar-brand" href="#">Places2Go</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-white border-bottom box-shadow fixed-top">
+  <div class="container-fluid">
+<a class="navbar-brand" href="#">Places2Go</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+  aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-
-
-
-    <ul class="nav navbar-nav navbar-right">
-      <% if user_signed_in? %>
-        <%= yield :right_nav %>
-
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <%= current_user.username %>
-                <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <%= link_to "Settings", edit_user_registration_path %>
-              </li>
-              <li role="separator" class="divider"></li>
-              <li>
-                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-              </li>
-            </ul>
-          </li>
-          <% else %>
-            <li>
-              <%= link_to "Sign Up", new_user_registration_path %>
-            </li>
-            <li>
-              <%= link_to "Login", new_user_session_path %>
-            </li>
-            <% end %>
-    </ul>
+<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Home
+        <span class="sr-only">(current)</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+  </ul>
 
 
-    <ul class="nav navbar-nav navbar-right">
-      <li> </li>
-    </ul>
+
+
+  <div class="btn-group">
+    <% if user_signed_in? %>
+      <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= current_user.username %>
+      </button>
+    
+    <div class="dropdown-menu dropdown-menu-right">
+      <button class="dropdown-item" type="button"><%= link_to "Settings", edit_user_registration_path %></button>
+      <button class="dropdown-item" type="button"><%= link_to "Logout", destroy_user_session_path, method: :delete %></button>  
+    </div>
+    <% else %>
+      <div class="nav navbar-nav navbar-right">
+        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-primary" %>
+        <%= link_to "Login", new_user_session_path, class: "btn btn-outline-primary" %>
+      </div>
+    <% end %>
+  </div>
+
+
+
+</div>
+
+
 
 
   </div>
+  
 </nav>
 
 
