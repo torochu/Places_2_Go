@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.1'
 gem 'jquery-rails'
 gem 'devise', '~> 4.2'
+gem 'devise-bootstrapped', '~> 0.1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,6 +46,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'annotate', '~> 2.7', '>= 2.7.1'
 end
 
 group :development do

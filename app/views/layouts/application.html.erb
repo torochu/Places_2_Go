@@ -18,8 +18,39 @@
         <a class="p-2 text-dark" href="#">人氣地點</a>
         <a class="p-2 text-dark" href="#">最新地點</a>
         <a class="p-2 text-dark" href="#">說明</a>
+
+        <ul class="nav navbar-nav">
+          <% if user_signed_in? %>
+            <%= yield :right_nav %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <%#= current_user.username %>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <%= link_to "Settings", edit_user_registration_path %>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+                  </li>
+                </ul>
+              </li>
+              <% else %>
+                <li>
+        
+                  <%= link_to "註冊", new_user_registration_path, class:"btn btn-outline-primary" %>
+                </li>
+                <li>
+        
+                  <%= link_to "登入", new_user_session_path, class:"btn btn-outline-primary" %>
+                </li>
+                <% end %>
+        </ul>
       </nav>
-      <a class="btn btn-outline-primary" href="#">登入</a>
+      
+      
     </div>
     
 
