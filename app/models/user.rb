@@ -31,4 +31,5 @@ class User < ApplicationRecord
          :omniauthable
 
   has_many :places
+  has_many :services
 end
