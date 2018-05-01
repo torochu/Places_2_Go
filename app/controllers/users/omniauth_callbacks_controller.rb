@@ -14,8 +14,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       user = User.create(
         email: auth.info.email,
         username: auth.info.name,
+        avatar: URI.parse(auth.info.image),
         password: Devise.friendly_token[0,20]
       )
+      puts "使用者頭像"
+      puts URI.parse(auth.info.image)
+      
       user.services.create(
         provider: auth.provider,
         uid: auth.uid,
