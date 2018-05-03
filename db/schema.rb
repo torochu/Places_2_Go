@@ -24,8 +24,17 @@ ActiveRecord::Schema.define(version: 20180502143140) do
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "places" because of following StandardError
-#   Unknown type 'reference' for column 'user'
+  create_table "places", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "city"
+    t.string "district"
+    t.string "address"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_places_on_user_id"
+  end
 
   create_table "services", force: :cascade do |t|
     t.integer "user_id"
