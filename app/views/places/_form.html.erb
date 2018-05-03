@@ -9,6 +9,13 @@
     <br>
     <%= f.text_area :description, class: "form-control" %>
     <br>
+    <div class="city-group">
+        <%= f.select(:city, TaiwanCity.list, { include_blank: '--縣市--'}, { class: 'city-select'}) %>
+        <%= f.select(:district, [], {include_blank: '--鄉鎮市區--'}, {class: 'city-select'}) %>
+    </div>
+        
+      
+    <br>
     <%= f.submit "Submit", :disable_with => 'Submiting...', class: "form-control" %>
     <% end %>
   </div>

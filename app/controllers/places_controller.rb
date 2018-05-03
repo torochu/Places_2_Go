@@ -11,7 +11,8 @@ class PlacesController < ApplicationController
 
   def create
     @place = Place.new(place_params)
-    @place.save
+    @place.user_id = current_user.id
+    @place.save!
     redirect_to places_path
   end
 
@@ -33,7 +34,7 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :description)
+    params.require(:place).permit(:name, :description, :city, :district, :address)
   end
   
 

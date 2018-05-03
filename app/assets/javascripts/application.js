@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery3
+//= require 'taiwan_city/jquery.taiwan_city'
 //= require rails-ujs
 //= require turbolinks
 //= require popper
