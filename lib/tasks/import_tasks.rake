@@ -13,6 +13,6 @@ namespace :csv do
                     # 地區
                     "city:create",
                     # 基本csv資料
-                    #"data:import_data"
+                    "data:import_data"
                    ]
 end
