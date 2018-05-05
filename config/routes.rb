@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   mount TaiwanCity::Engine => '/taiwan_city'
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
-  get 'pages/welcome'
+  
+  namespace :adm do
+    resources :places
+  end
+  
   root 'pages#welcome'
   resources :places
 
