@@ -1,8 +1,16 @@
-class Adm::PlacesController < ApplicationController
+
+class Adm::PlacesController < ApplicationController  
+  # dashboard layout
+  layout "adm"
+
+  # user must be logged in to access these actions
+  before_action :authenticate_user!
+  # user must be admin to access
+  before_action :admin_required
 
   def index
     @places = Place.all
-    flash[:dark] = "Title of a longer featured blog post"
+    flash[:info] = "Welcome to dashboard"
   end
 
   def new
@@ -27,7 +35,7 @@ class Adm::PlacesController < ApplicationController
   def update
     @place = Place.find(params[:id])
     @place.update(place_params)
-    redirect_to place_path(@place), notice: "Update successfully"
+    redirect_to adm_place_path(@place), notice: "更新完成"
   end
   
   

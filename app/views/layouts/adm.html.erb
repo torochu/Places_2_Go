@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Places2Go - Dashboard</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%#= javascript_pack_tag 'hello_vue' %>
+</head>
+<body>
+  
+    <%= render "common/navbar" %>
+    <div class="container layout">
+      <div class="row">
+        <div class="col-md-3">
+
+          <div class="list-group">
+            <%= link_to "Dashboard", adm_places_path, class:"list-group-item list-group-item-action active" %>
+            <%= link_to "地點待審核", adm_places_path, class:"list-group-item list-group-item-action" %>
+            <button type="button" class="list-group-item list-group-item-action">待審核地點</button>
+            <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+            <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
+            <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
+          </div>
+          <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+            <li>
+              
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+
+          <%= yield %>
+        </div>
+      </div>
+  </div>
+</body>
+</html>
+
+
+
+

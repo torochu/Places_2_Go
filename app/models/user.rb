@@ -8,6 +8,7 @@
 #  current_sign_in_ip     :string
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  is_admin               :boolean          default(FALSE)
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :string
 #  remember_created_at    :datetime
@@ -33,4 +34,9 @@ class User < ApplicationRecord
 
   has_many :places
   has_many :services
+
+  def admin?
+    # boolean: is_admin column under user table
+    is_admin
+  end
 end
