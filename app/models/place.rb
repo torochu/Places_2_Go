@@ -14,9 +14,9 @@
 #  draft          :boolean          default(TRUE)
 #  facility       :text
 #  food_ranking   :integer
-#  latitude       :string
+#  latitude       :float
 #  limitation     :text
-#  longitude      :string
+#  longitude      :float
 #  minimum_order  :string
 #  name           :string
 #  parking        :boolean
