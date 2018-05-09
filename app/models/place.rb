@@ -14,7 +14,9 @@
 #  draft          :boolean          default(TRUE)
 #  facility       :text
 #  food_ranking   :integer
+#  latitude       :string
 #  limitation     :text
+#  longitude      :string
 #  minimum_order  :string
 #  name           :string
 #  parking        :boolean
@@ -40,4 +42,13 @@ class Place < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :category
   #belongs_to :city
+
+  geocoded_by :full_address
+  after_validation :geocode
+
+  def full_address
+    #  city, district, address
+    [TaiwanCity.get(city), TaiwanCity.get(district), address].compact.join
+  end
+  
 end
