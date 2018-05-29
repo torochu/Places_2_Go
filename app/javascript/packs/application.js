@@ -9,6 +9,12 @@
 
 // console.log('Hello World from Webpacker')
 
+// Vue-Turbolinks
+// yarn add vue-turbolinks
+
+// ERROR
+// Module parse failed: Unexpected token(18: 2) You may need an appropriate loader to handle this file type.
+// yarn upgrade vue-loader@14.2.2
 
 import TurbolinksAdapter from 'vue-turbolinks';
 import Vue from 'vue/dist/vue.esm'
