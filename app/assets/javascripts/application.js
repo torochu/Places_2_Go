@@ -10,11 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require rails-ujs
 //= require jquery3
 //= require 'taiwan_city/jquery.taiwan_city'
-//= require rails-ujs
-//= require turbolinks
 //= require popper
 //= require bootstrap-sprockets
 //= require bootstrap/alert
+//= require gmaps
+//= require turbolinks
 //= require_tree .

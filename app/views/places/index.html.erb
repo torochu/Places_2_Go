@@ -1,4 +1,10 @@
 <div class="col-md-12">
+
+  
+  <%= tag.div nil, id: 'map', data: {places: @places.to_json(methods: [:full_address]) } %>
+  
+
+  
   <div class="place">
     <%= link_to("新增地點", new_place_path, class: "btn btn-primary pull-right") %>
   </div>
@@ -8,6 +14,8 @@
         <td>#</td>
         <td>地點名稱</td>
         <td>描述</td>
+        <td>latitude</td>
+        <td>longitude</td>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +24,12 @@
           <td>#</td>
           <td><%= link_to(place.name, place_path(place)) %></td>
           <td><%= place.description %></td>
+          <td>
+            <%= place.latitude %>
+          </td>
+          <td>
+            <%= place.longitude %>
+          </td>
           <td>
               <%= link_to("Edit", edit_place_path(place), class: "btn btn-sm btn-default")%>
               <%= link_to("Delete", place_path(place),    class: "btn btn-sm btn-default", 

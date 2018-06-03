@@ -16,9 +16,17 @@
 // Module parse failed: Unexpected token(18: 2) You may need an appropriate loader to handle this file type.
 // yarn upgrade vue-loader@14.2.2
 
+// look for a directory inside javascript packs, and we would put an 
+// index.js in there, and this require will basically load up that file 
+// and execute it as well. All we have to do then is say: Let's make a 
+// directory called
+
+
+
 import TurbolinksAdapter from 'vue-turbolinks';
 import Vue from 'vue/dist/vue.esm'
 import App from '../app.vue'
+require('./maps')
 
 Vue.use(TurbolinksAdapter)
 Vue.component('app', App)

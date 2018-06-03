@@ -11,6 +11,7 @@
         <td>描述</td>
         <td>City</td>
         <td>Lat.</td>
+        <td>Lng.</td>
         <td></td>
       </tr>
     </thead>
@@ -26,6 +27,7 @@
           </td>
           <td><%= place.city %></td>
           <td><%= place.latitude %></td>
+          <td><%= place.longitude %></td>
           <td>
             <%= link_to("Edit", edit_adm_place_path(place), class: "btn btn-sm btn-default")%>
               <%= link_to("Delete", adm_place_path(place),    class: "btn btn-sm btn-default", 

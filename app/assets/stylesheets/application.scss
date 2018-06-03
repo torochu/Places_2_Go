@@ -13,10 +13,14 @@
  */
 
 
- @import "bootstrap";
- @import "bootstrap/mixins";
+@import "bootstrap";
+@import "bootstrap/mixins";
 
 
- .layout {
-   margin-top: 20px;
- }
+.layout {
+  margin-top: 20px;
+  }
+
+#map {
+  height: 400px;
+}
