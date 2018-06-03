@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   end
   
   root 'pages#welcome'
-  resources :places
+
+  resources :places do
+    # only for current user (singular like)
+    resource :like, module: :places
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
