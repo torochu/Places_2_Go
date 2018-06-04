@@ -42,6 +42,7 @@ class Place < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :category
   #belongs_to :city
+  has_many :likes
 
   geocoded_by :full_address
   after_validation :geocode

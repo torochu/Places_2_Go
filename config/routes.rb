@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :adm do
     resources :places
     resources :users
+    resources :likes
   end
   
   root 'pages#welcome'

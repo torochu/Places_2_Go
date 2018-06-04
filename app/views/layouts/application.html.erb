@@ -59,7 +59,7 @@
       <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
           <% City.all.each do |city| %>
-            <%= link_to city.name, places_path(name: city.name), class: 'nav-link' %>
+            <%= link_to city.name, places_path(city: city.name), class: 'nav-link' %>
           <% end %>
           </nav>
         </ul>

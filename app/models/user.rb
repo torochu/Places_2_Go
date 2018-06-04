@@ -34,6 +34,11 @@ class User < ApplicationRecord
 
   has_many :places
   has_many :services
+  has_many :likes
+
+  def likes?(place)
+    place.likes.where(user_id: id).any?  
+  end
 
   def admin?
     # boolean: is_admin column under user table
