@@ -1,11 +1,11 @@
 class PlacesController < ApplicationController
 
   def index
-    if params[:city].present?
-      @places = Place.where(city: params[:city])
-    else 
+    #if params[:city].present?
+    #  @places = Place.where(city: params[:city])
+    #else 
       @places = Place.all
-    end
+    #end
     #flash[:dark] = "Title of a longer featured blog post"
   end
 
