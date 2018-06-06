@@ -1,9 +1,6 @@
 <div class="col-md-12">
 
-  
-  <%= tag.div nil, id: 'map', data: {places: @places.to_json(methods: [:full_address]) } %>
-  
-
+  <app-map places="<%=@places.to_json(methods: [:full_address])%>"></app-map>
   
   <div class="place">
     <%= link_to("新增地點", new_place_path, class: "btn btn-primary pull-right") %>

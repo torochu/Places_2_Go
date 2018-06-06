@@ -26,14 +26,16 @@
 import TurbolinksAdapter from 'vue-turbolinks';
 import Vue from 'vue/dist/vue.esm'
 import App from '../app.vue'
-require('./maps')
+import AppMap from '../appMap.vue'
+// require('./maps')
 
 Vue.use(TurbolinksAdapter)
 Vue.component('app', App)
+Vue.component('app-map', AppMap)
 
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('turbolinks:load', function () {
   const app = new Vue({
-    el: '[data-behavior="vue"]',
+    el: '[data-behavior="vue"]'
   })
 })
