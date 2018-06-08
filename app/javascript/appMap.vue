@@ -18,10 +18,10 @@ export default {
       lat: 38.5816,
       lng: -121.4944
     });
-    //   window.map = map;
+       window.map = map;
 
     var transactions = JSON.parse(this.places);
-    // window.transactions = transactions;
+     window.transactions = transactions;
 
     var bounds = new google.maps.LatLngBounds();
 

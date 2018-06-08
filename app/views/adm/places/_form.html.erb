@@ -6,13 +6,14 @@
   <%= form_for [:adm, @place] do |f| %>
     地點名稱
     <%= f.text_field :name, class: "form-control" %>
+    <%= f.object.city %>
     <br> 叙述
     <br>
     <%= f.text_area :description, class: "form-control" %>
     <br>
     <div class="city-group">
       <%= f.select(:city, TaiwanCity.list, { include_blank: '--縣市--'}, { class: 'city-select'}) %>
-      <%= f.select(:district, [], {include_blank: '--鄉鎮市區--'}, {class: 'city-select'}) %>
+      <%= f.select(:district, TaiwanCity.list(@place.city), {include_blank: '--鄉鎮市區--'}, {class: 'city-select'}) %>
       <%= f.text_field :address, class: "form-control" %>
     </div>
     <br>

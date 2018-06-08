@@ -1,5 +1,5 @@
 
-<%= tag.div nil, id: 'map', data: {places: @place.to_json(methods: [:full_address]) } %>
+<app-map places="[<%=@place.to_json(methods: [:full_address])%>]"></app-map>
 
 <table class="table">
   <thead class="thead-light">

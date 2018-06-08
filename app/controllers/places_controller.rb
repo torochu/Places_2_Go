@@ -1,10 +1,16 @@
 class PlacesController < ApplicationController
 
   def index
+
+    if params[:city]
+      @places = Place.where('city LIKE ?', "%#{params[:city]}%")
+    else
+      @places = Place.all
+    end
     #if params[:city].present?
     #  @places = Place.where(city: params[:city])
     #else 
-      @places = Place.all
+      # @places = Place.all
     #end
     #flash[:dark] = "Title of a longer featured blog post"
   end
@@ -22,6 +28,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    
   end
 
   def edit

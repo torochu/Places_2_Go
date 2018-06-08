@@ -16,7 +16,7 @@
         <div class="col-md-3">
 
           <div class="list-group">
-            <%= link_to "Dashboard", adm_places_path, class:"lgist-group-item list-group-item-action active" %>
+            <%= link_to "Dashboard", adm_places_path, class:"list-group-item list-group-item-action active" %>
             <%= link_to "地點待審核", adm_places_path, class:"list-group-item list-group-item-action" %>
             <%= link_to "使用者清單", adm_users_path, class:"list-group-item list-group-item-action" %>
             <button type="button" class="list-group-item list-group-item-action">待審核地點</button>
@@ -31,7 +31,6 @@
           </ul>
         </div>
         <div class="col-md-9">
-
           <%= yield %>
         </div>
       </div>
