@@ -42,6 +42,8 @@ gem 'devise-bootstrapped', '~> 0.1.1'
 gem 'omniauth-facebook', '~> 4.0'
 gem 'taiwan_city'
 gem 'geocoder', '~> 1.4', '>= 1.4.7'
+gem 'carrierwave', '~> 1.2', '>=1.2.2'
+gem 'mini_magick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
