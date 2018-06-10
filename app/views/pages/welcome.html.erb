@@ -1,4 +1,41 @@
 <div class="container">
+  <h4>最新地點</h4>
+  <div class="card-columns">            
+    <% Place.last(5).each do |place| %>
+
+    <div class="card">
+      <img class="card-img-top img-fluid" src="http://fakeimg.pl/800x180/282828/EAE0D0/" alt="Card image cap">
+      <div class="card-body">
+          <h4 class="card-title"><%= place.name %></h4>
+          <p class="card-text"><%= place.description %></p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <% end %>
+        
+    <div class="card">
+        <img class="card-img img-fluid" src="//placehold.it/800x600" alt="Card image">
+    </div>
+    <div class="card card-body text-right">
+        <blockquote class="card-blockquote">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer>
+                <small class="text-muted">
+                  Someone famous in <cite title="Source Title">Source Title</cite>
+                </small>
+            </footer>
+        </blockquote>
+    </div>
+
+    <div class="card card-body">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+
+  <hr>
+  <h4>熱門地點</h4> 
   <div class="row mb-2">
     <div class="col-md-6">
       <div class="card flex-md-row mb-4 box-shadow h-md-250">
@@ -30,6 +67,7 @@
     </div>
   </div>
 </div>
+
 
 <main role="main" class="container">
   <div class="row">
@@ -102,6 +140,8 @@
         <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
       </nav>
 
+
+
     </div><!-- /.blog-main -->
 
     <aside class="col-md-4 blog-sidebar">
@@ -139,7 +179,8 @@
     </aside><!-- /.blog-sidebar -->
 
 
-  <div id="app">
-    {{ message }}
-  </div>
+
 </main>
+
+
+
