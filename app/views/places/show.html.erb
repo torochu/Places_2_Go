@@ -29,17 +29,23 @@
 <h3>Vue.js</h3>
 <br>
 
-        <app inline-template :message="<%= " GO GO RAILS ".to_json %>">
-          <h1>{{message}}</h1>
-        </app>
-        
-        <% 1.upto(10).each do |i| %>
-          <app :message="<%= i.to_json %>"></app>
-          <% end %>
-        
-            <app :message="<%= " testing ".to_json %>"></app>
-            <app></app>
-            <app></app>
-            <app></app>
-            <app></app>
-            <app></app>
+<app inline-template :message="<%= " GO GO RAILS ".to_json %>">
+  <h1>{{message}}</h1>
+</app>
+
+<% 1.upto(10).each do |i| %>
+<app :message="<%= i.to_json %>"></app>
+<% end %>
+
+<app :message="<%= " testing ".to_json %>"></app>
+<app></app>
+<app></app>
+<app></app>
+<app></app>
+<app></app>
+
+
+<br>
+<% @place.images.each do |image| %>
+  <%= image_tag image %>
+<% end %>

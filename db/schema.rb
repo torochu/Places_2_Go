@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180610121749) do
+ActiveRecord::Schema.define(version: 20180610132847) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -31,8 +31,39 @@ ActiveRecord::Schema.define(version: 20180610121749) do
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "places" because of following StandardError
-#   Unknown type 'json' for column 'images'
+  create_table "places", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "city"
+    t.string "district"
+    t.string "address"
+    t.integer "user_id"
+    t.integer "category_id"
+    t.integer "recommendation"
+    t.integer "food_ranking"
+    t.string "suitable_age"
+    t.string "average_cost"
+    t.string "train_distance"
+    t.string "station_nearby"
+    t.boolean "parking"
+    t.boolean "booking"
+    t.text "comment"
+    t.string "user_name"
+    t.text "limitation"
+    t.text "facility"
+    t.text "business_hour"
+    t.string "minimum_order"
+    t.string "phone"
+    t.string "url"
+    t.boolean "draft", default: true
+    t.float "latitude"
+    t.float "longitude"
+    t.string "images"
+    t.index ["category_id"], name: "index_places_on_category_id"
+    t.index ["user_id"], name: "index_places_on_user_id"
+  end
 
   create_table "services", force: :cascade do |t|
     t.integer "user_id"

@@ -13,6 +13,11 @@
         <%= f.select(:city, TaiwanCity.list, { include_blank: '--縣市--'}, { class: 'city-select'}) %>
         <%= f.select(:district,[], {include_blank: '--鄉鎮市區--'}, {class: 'city-select'}) %>
     </div>
+
+    <div class="field">
+        add an image....
+        <%= f.file_field :images, multiple: true %>
+      </div>
         
       
     <br>

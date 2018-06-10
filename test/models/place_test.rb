@@ -14,7 +14,7 @@
 #  draft          :boolean          default(TRUE)
 #  facility       :text
 #  food_ranking   :integer
-#  images         :json
+#  images         :string
 #  latitude       :float
 #  limitation     :text
 #  longitude      :float

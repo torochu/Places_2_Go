@@ -14,7 +14,7 @@
 #  draft          :boolean          default(TRUE)
 #  facility       :text
 #  food_ranking   :integer
-#  images         :json
+#  images         :string
 #  latitude       :float
 #  limitation     :text
 #  longitude      :float
@@ -48,7 +48,8 @@ class Place < ApplicationRecord
   geocoded_by :full_address
   after_validation :geocode
 
-  mount_uploader :image, ImageUploader
+  mount_uploaders :images, ImageUploader
+  serialize :images, JSON
 
   def full_address
     #  city, district, address

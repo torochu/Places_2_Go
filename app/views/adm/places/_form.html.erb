@@ -17,6 +17,13 @@
       <%= f.text_field :address, class: "form-control" %>
     </div>
     <br>
+    <div class="field">
+      add an image....
+      <%= f.file_field :images, multiple: true %>
+    </div>
+    <br>
+    <%= f.text_field :category_id, value: 1, class: "form-control" %>
+
     <%= f.submit "Submit", :disable_with => 'Submiting...', class: "form-control" %>
   <% end %>
 </div>

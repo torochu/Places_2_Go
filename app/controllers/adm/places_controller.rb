@@ -42,7 +42,7 @@ class Adm::PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :description, :city, :district, :address)
+    params.require(:place).permit(:name, :description, :city, :district, :address, :category_id, {images: []})
   end
   
 
