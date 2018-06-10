@@ -45,6 +45,7 @@ gem 'geocoder', '~> 1.4', '>= 1.4.7'
 gem 'carrierwave', '~> 1.2', '>=1.2.2'
 gem 'mini_magick'
 #gem 'masonry-rails', '~> 0.2.4'
+gem 'seed_dump', '~> 3.3', '>= 3.3.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
