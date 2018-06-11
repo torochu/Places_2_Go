@@ -1,6 +1,6 @@
-User.create!([
-  {email: "will2b@gmail.com", encrypted_password: "$2a$11$nsFL5ZvOiY7z5p2AScWUEOl3PY0fyqRYo8l9t90dFSrTPjExtZEQu", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2018-06-07 15:40:43", last_sign_in_at: "2018-06-07 15:40:43", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", username: "William Kang", avatar: "http://graph.facebook.com/v2.6/10155081312717159/picture", is_admin: true}
-])
+# User.create!([
+#   {email: "will2b@gmail.com", encrypted_password: "$2a$11$nsFL5ZvOiY7z5p2AScWUEOl3PY0fyqRYo8l9t90dFSrTPjExtZEQu", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2018-06-07 15:40:43", last_sign_in_at: "2018-06-07 15:40:43", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", username: "William Kang", avatar: "http://graph.facebook.com/v2.6/10155081312717159/picture", is_admin: true}
+# ])
 Category.create!([
   {name: "公園"},
   {name: "親子館 / 博物館"},
@@ -152,6 +152,6 @@ Place.create!([
   {name: "Young Lion親子餐廳", description: "", city: "13000", district: "13807", address: "十全二路250號", user_id: 1, category_id: 3, recommendation: 4, food_ranking: 4, suitable_age: "2~6歲\n學齡前", average_cost: "$200~$400", train_distance: ">15分", station_nearby: "後驛站一號出口", parking: true, booking: true, comment: "假日人較多，平日去比較好玩", user_name: nil, limitation: nil, facility: "1.決明子沙坑2.溜滑梯球池3.扮家家酒積木區4.彈珠台", business_hour: "11:30~20:30", minimum_order: "250~300", phone: "07-3223899 \n0978395899", url: "https://www.facebook.com/younglionspace/", draft: true, latitude: 22.6460454, longitude: 120.2966911, images: nil},
   {name: "童樂島親子餐廳", description: "獨立精緻大套房+廚房+獨立衛浴 。中山國小捷運站-步行3分鐘。\r\n\r\n機場捷運線\r\n標準雙人床150*200\r\n臨近景點:晴光夜市/花博公園/台北市立美術館\r\n\r\n樓下就是全聯超市,對面7-11 \r\n位於市中心,到哪裡都很方便,西門町.東區.故宮.摩天輪.陽明山\r\n\r\n房內配備:有鍋子 / 冰箱/吹風機/棉花棒/洗面乳/卸妝油/乾淨毛巾/水兩罐/開罐器/\r\n特別提醒為響應環保沒有提供牙刷,但如果臨時沒帶當天可以跟我們要喔\r\n\r\n希望大家帶來都可以住的舒服\r\n\r\n", city: "13000", district: "13807", address: "文濱路45號", user_id: 1, category_id: 3, recommendation: 4, food_ranking: 3, suitable_age: "2~6歲\n學齡前", average_cost: "$200~$400", train_distance: nil, station_nearby: nil, parking: nil, booking: nil, comment: nil, user_name: nil, limitation: nil, facility: nil, business_hour: nil, minimum_order: nil, phone: "07 780 8777", url: "https://www.facebook.com/童樂島親子餐廳-Kids-Fun-Land-878253268949620/", draft: true, latitude: 22.6396627, longitude: 120.3483831, images: nil}
 ])
-Service.create!([
-  {user_id: 1, provider: "facebook", uid: "10155081312717159", access_token: "EAAJyk3JeDUwBAJrKRhWVLmgCCW9ZC6b9y6u8ZBe1unxSoQVa6rZAv5Va0QZBFb5bUsxZCmgalr1rUgCjDbmraeMLT5xJNSXVSM7XQIW0NPWdD9QR4Cf4ewjNkMgoqUU2jnwRT31bozgeS2vF8vKz4jKb3cZCeGLmMhPQa0gGEpigZDZD", access_token_secret: nil, refresh_token: nil, expires_at: "2018-08-03 14:17:32", auth: nil}
-])
+# Service.create!([
+#   {user_id: 1, provider: "facebook", uid: "10155081312717159", access_token: "EAAJyk3JeDUwBAJrKRhWVLmgCCW9ZC6b9y6u8ZBe1unxSoQVa6rZAv5Va0QZBFb5bUsxZCmgalr1rUgCjDbmraeMLT5xJNSXVSM7XQIW0NPWdD9QR4Cf4ewjNkMgoqUU2jnwRT31bozgeS2vF8vKz4jKb3cZCeGLmMhPQa0gGEpigZDZD", access_token_secret: nil, refresh_token: nil, expires_at: "2018-08-03 14:17:32", auth: nil}
+# ])

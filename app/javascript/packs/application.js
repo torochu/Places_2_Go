@@ -27,7 +27,7 @@ import TurbolinksAdapter from 'vue-turbolinks';
 import Vue from 'vue/dist/vue.esm'
 import App from '../app.vue'
 import AppMap from '../appMap.vue'
-import VueMasonry from 'vue-masonry-css'
+//import VueMasonry from 'vue-masonry-css'
 // require('./maps')
 
 Vue.use(TurbolinksAdapter)
@@ -35,7 +35,7 @@ Vue.component('app', App)
 Vue.component('app-map', AppMap)
 
 // https://github.com/paulcollett/vue-masonry-css
-Vue.use(VueMasonry);
+//Vue.use(VueMasonry);
 
 
 document.addEventListener('turbolinks:load', function () {

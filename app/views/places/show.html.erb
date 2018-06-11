@@ -7,7 +7,7 @@
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Description</th>
-      <th scope="col"></th>
+      <th scope="col">User</th>
     </tr>
   </thead>
   <tbody>
@@ -15,7 +15,7 @@
       <th scope="row"><%= @place.id %></th>
       <td><%= @place.name %></td>
       <td><%= @place.description %></td>
-      <td>@mdo</td>
+      <td><%= @place.user.username %></td>
     </tr>
   </tbody>
 </table>
