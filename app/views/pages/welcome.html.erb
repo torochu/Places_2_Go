@@ -1,17 +1,27 @@
 <div class="container">
+  <!-- Latest 5 places -->
   <h4>最新地點</h4>
   <div class="card-columns">            
-    <% Place.last(5).each do |place| %>
+    <% @latest_places.each do |place| %>
 
     <div class="card">
       <img class="card-img-top img-fluid" src="http://fakeimg.pl/800x180/282828/EAE0D0/" alt="Card image cap">
       <div class="card-body">
-          <h4 class="card-title"><%= place.name %></h4>
-          <p class="card-text"><%= place.description %></p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
+       
+        <div class="float-right">
+            <span class="fa-stack fa-1x has-badge" data-count="<%= place.likes.count %>">
+                
+                <i class="far fa-heart fa-2x" style="color:#ff7675"></i>
+              </span>
+        </div>
+
+        <h4 class="card-title"><%= link_to place.name, place_path(place) %></h4>
+        <p class="card-text"><%= place.description %></p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
-    <% end %>
+  </div>
+  <% end %>
+   <!-- Latest 5 places --> 
         
     <div class="card">
         <img class="card-img img-fluid" src="//placehold.it/800x600" alt="Card image">

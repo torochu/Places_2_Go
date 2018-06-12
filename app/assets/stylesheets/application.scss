@@ -15,6 +15,8 @@
 
 @import "bootstrap";
 @import "bootstrap/mixins";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 
 .layout {
@@ -23,4 +25,19 @@
 
 #map {
   height: 400px;
+}
+
+.fa-stack[data-count]:after{
+  position:absolute;
+  margin: auto;
+  top: 25%; left: 0; bottom: 0; right: 0;
+  content: attr(data-count);
+  font-size:40%;
+  padding:.6em;
+  border-radius:999px;
+  line-height:.75em;
+  color: grey;  
+  text-align:center;
+  min-width:2em;
+  font-weight:bold;
 }
