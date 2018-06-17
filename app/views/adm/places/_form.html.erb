@@ -1,16 +1,31 @@
 
 
-<div class="col-md-4 col-md-offset-4" data-turbolinks="false">
+
+<div class="col-md-8 col-md-offset-8" data-turbolinks="false">
   <h2>新增地點</h2>
   <hr>
-  <%= form_for [:adm, @place] do |f| %>
-    地點名稱
-    <%= f.text_field :name, class: "form-control" %>
-    <%= f.object.city %>
+
+  <%= simple_form_for [:adm, @place], html: {class: 'form-group'} do |f| %>
+    <% if @place.errors.any? %>
+      <ul>
+        <% @place.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    
+    <div class="form-group">
+      <%= f.label "地點名稱" %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    
+
+
     <br> 叙述
     <br>
     <%= f.text_area :description, class: "form-control" %>
     <br>
+    <%#= f.object.city %>
     <div class="city-group">
       <%= f.select(:city, TaiwanCity.list, { include_blank: '--縣市--'}, { class: 'city-select'}) %>
       <%= f.select(:district, TaiwanCity.list(@place.city), {include_blank: '--鄉鎮市區--'}, {class: 'city-select'}) %>
@@ -22,8 +37,41 @@
       <%= f.file_field :images, multiple: true %>
     </div>
     <br>
-    <%= f.text_field :category_id, value: 1, class: "form-control" %>
+    <%#= collection_select(:place, :parking, Place::PARKING, , :to_s, {prompt: '停車', class: 'form-control'}) %>
+    
+    <%= f.label "附設停車場" %>
+    
+    <%= f.select "parking", Place::PARKING.map.with_index{|x,i| [x, i]}, {class: 'form-control'} %>
+    <%#= collection_select :day, @dates, :to_s, :to_s, include_blank: false %>
+    <br>
+    <%= f.label "事先預約" %>
+    <%#= f.select "parking", Place::BOOKING.map.with_index{|x,i| [x, i]}, {class: 'form-control'} %>    
+    <%#= f.input :booking, as: :radio_buttons, collection: [['0', '不需要'], ['1', '需要']], label_method: :second, value_method: :first %>
+    <%= f.input_field :booking, as: :boolean, input_html: { class: 'form-control'} %>
 
+
+    
+    <br>
+    <%#= f.label "附近捷運站" %>
+    <%= f.input :station_nearby, label: "附近捷運站", input_html: { class: 'form-control'}  %>
+    <%#= f.input :station_nearby, input_html: { name: 'DDDD' } %>
+    <br>
+    <%= f.label "捷運距離" %>
+    <%= f.select "train_distance", Place::TRAIN_DIS.map.with_index{|x,i| [x, i]}, {class: 'form-control'} %>
+
+    <br>
+    <%= f.label "人均價格" %>
+    <%= f.select "average_cost", Place::AVG_COST.map.with_index{|x,i| [x, i]}, {class: 'form-control'} %>
+
+    <br>
+    <%= f.label "適合幾歲小朋友" %>
+    <%= f.select "suitable_age", Place::SUITABLE_AGE.map.with_index{|x,i| [x, i]}, {class: 'form-control'} %>
+
+
+    <br><br>
+    <%= f.label "地點分類" %>
+    <%= collection_select(:place, :category_id, Category.all, :id, :name, {prompt: '請選擇分類', class: 'form-control'}) %>
     <%= f.submit "Submit", :disable_with => 'Submiting...', class: "form-control" %>
   <% end %>
+
 </div>

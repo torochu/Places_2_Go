@@ -4,7 +4,7 @@
 #
 #  id             :integer          not null, primary key
 #  address        :string
-#  average_cost   :string
+#  average_cost   :integer
 #  booking        :boolean
 #  business_hour  :text
 #  city           :string
@@ -20,12 +20,12 @@
 #  longitude      :float
 #  minimum_order  :string
 #  name           :string
-#  parking        :boolean
+#  parking        :integer
 #  phone          :string
 #  recommendation :integer
 #  station_nearby :string
-#  suitable_age   :string
-#  train_distance :string
+#  suitable_age   :integer
+#  train_distance :integer          default(0)
 #  url            :string
 #  user_name      :string
 #  created_at     :datetime         not null

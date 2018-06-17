@@ -5,7 +5,12 @@
     <% @latest_places.each do |place| %>
 
     <div class="card">
-      <img class="card-img-top img-fluid" src="http://fakeimg.pl/800x180/282828/EAE0D0/" alt="Card image cap">
+        <% if place.images.present? %>
+          <%= image_tag place.images[0].thumb.url, class: 'card-img-top img-fluid' %>
+        <% else %>
+          <img class="card-img-top img-fluid" src="http://fakeimg.pl/800x180/282828/EAE0D0/" alt="Card image cap">
+        <% end %>
+      
       <div class="card-body">
        
         <div class="float-right">
@@ -16,6 +21,7 @@
         </div>
 
         <h4 class="card-title"><%= link_to place.name, place_path(place) %></h4>
+        
         <p class="card-text"><%= place.description %></p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>

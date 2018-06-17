@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180610132847) do
+ActiveRecord::Schema.define(version: 20180616161844) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -43,11 +43,11 @@ ActiveRecord::Schema.define(version: 20180610132847) do
     t.integer "category_id"
     t.integer "recommendation"
     t.integer "food_ranking"
-    t.string "suitable_age"
-    t.string "average_cost"
-    t.string "train_distance"
+    t.integer "suitable_age"
+    t.integer "average_cost"
+    t.integer "train_distance", default: 0
     t.string "station_nearby"
-    t.boolean "parking"
+    t.integer "parking"
     t.boolean "booking"
     t.text "comment"
     t.string "user_name"

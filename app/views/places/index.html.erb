@@ -2,9 +2,7 @@
 
   <app-map places="<%=@places.to_json(methods: [:full_address])%>"></app-map>
   
-  <div class="place">
-    <%= link_to("新增地點", new_place_path, class: "btn btn-primary pull-right") %>
-  </div>
+  
   <table class="table table-hover">
     <thead>
       <tr>
@@ -20,7 +18,7 @@
         <tr>
           <td>#</td>
           <td><%= link_to(place.name, place_path(place)) %></td>
-          <td><%= place.description %></td>
+          <td><%= simple_format(place.description) %></td>
           <td>
             <%= place.latitude %>
           </td>

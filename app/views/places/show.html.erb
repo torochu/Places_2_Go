@@ -51,5 +51,8 @@
 
 <br>
 <% @place.images.each do |image| %>
-  <%= image_tag image %>
+  <%= image_tag image %><br>
+  <%#= image.thumb.url %>
+  <%= image_tag(image.thumb.url) %><br>
+  <%#= image_tag(@product.photo.image.medium.url, class: "thumbnail") %>
 <% end %>

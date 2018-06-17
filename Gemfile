@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap', '~> 4.1'
-gem 'font-awesome-sass', '~> 5.0.13'
+gem 'font-awesome-sass', '~> 5.0', '>= 5.0.13'
 gem 'jquery-rails'
 gem 'devise', '~> 4.2'
 gem 'devise-bootstrapped', '~> 0.1.1'
@@ -47,6 +47,7 @@ gem 'carrierwave', '~> 1.2', '>=1.2.2'
 gem 'mini_magick'
 #gem 'masonry-rails', '~> 0.2.4'
 gem 'seed_dump', '~> 3.3', '>= 3.3.1'
+gem 'simple_form', '~> 4.0', '>= 4.0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

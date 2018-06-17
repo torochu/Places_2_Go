@@ -7,7 +7,7 @@ class AddMultipleFieldsToPlace < ActiveRecord::Migration[5.1]
     add_column :places, :train_distance, :string
     add_column :places, :station_nearby, :string
     add_column :places, :parking, :boolean
-    add_column :places, :booking, :boolean
+    add_column :places, :booking, :boolean, default: false
     add_column :places, :comment, :text
     add_column :places, :user_name, :string
     add_column :places, :limitation, :text

@@ -18,10 +18,14 @@ class Adm::PlacesController < ApplicationController
   end
 
   def create
+
     @place = Place.new(place_params)
     @place.user_id = current_user.id
-    @place.save!
-    redirect_to places_path
+    if @place.save
+      redirect_to places_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -42,8 +46,38 @@ class Adm::PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :description, :city, :district, :address, :category_id, {images: []})
+    params.require(:place).permit(:name, :description, :city, :district, :longitude, :latitude, :address, :user_id, :category_id, :booking, :average_cost, :train_distance, :parking, {images: []})
   end
   
 
 end
+
+
+
+# == Schema Information
+#
+# Table name: places
+#
+#  id             :integer          not null, primary key
+#  business_hour  :text
+#  comment        :text
+#  draft          :boolean          default(TRUE)
+#  facility       :text
+#  food_ranking   :integer
+#  images         :string
+#  limitation     :text
+#  minimum_order  :string
+#  phone          :string
+#  recommendation :integer
+#  station_nearby :string
+#  suitable_age   :string
+#  url            :string
+#  user_name      :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+# Indexes
+#
+#  index_places_on_category_id  (category_id)
+#  index_places_on_user_id      (user_id)
+#
