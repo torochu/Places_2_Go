@@ -11,7 +11,7 @@
 #⁄  comment        :text
 #⁄  description    :text
 #⁄  district       :string
-#  draft          :boolean          default(TRUE)
+#⁄  draft          :boolean          default(TRUE)
 #  facility       :text
 #  food_ranking   :integer
 #⁄  images         :string
@@ -68,8 +68,8 @@ class Place < ApplicationRecord
   AVG_COST = %w(免費 $0~$100 $101~$200 $201~$400 $400~$800 >$800)
   SUITABLE_AGE = %w(什麼年紀都好 2歲前 2~6歲 7~12歲)
   MIN_ORDER = %w(無低消 $0~$100 $101~$200 $201~$400 $400~$800 >$800)
-  FOOD_RANKING = %w(無 勉強 普通 還可以 不錯 很好 超棒 )
-  RECOMMENDATION = %w(無 勉強 普通 還可以 不錯 很好 超棒 )
+  FOOD_RANKING = %w(無 ★勉強 ★★普通 ★★★還可以 ★★★★不錯 ★★★★★很好 ★★★★★★超棒)
+  RECOMMENDATION = %w(無 ★勉強 ★★普通 ★★★還可以 ★★★★不錯 ★★★★★很好 ★★★★★★超棒)
 
   def full_address
     #  city, district, address

@@ -16,6 +16,8 @@
         <td>人均消費</td>
         <td>低消</td>
         <td>適合幾歲</td>
+        <td>食物評價</td>
+        <td>推薦指數</td>
         <td>評語</td>
         <td>City</td>
         <td>Lat.</td>
@@ -39,6 +41,8 @@
           <td><%= Place::AVG_COST[place.average_cost.to_i] %></td>
           <td><%= Place::MIN_ORDER[place.minimum_order.to_i] %></td>
           <td><%= Place::SUITABLE_AGE[place.suitable_age.to_i] %></td>
+          <td><%= Place::FOOD_RANKING[place.food_ranking.to_i] %></td>
+          <td><%= Place::RECOMMENDATION[place.recommendation.to_i] %></td>
           <td><%= truncate(place.comment, length: 17) %></td>
           <td><%= place.city %></td>
           <td><%= place.latitude %></td>

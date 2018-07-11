@@ -5,7 +5,7 @@ class PlacesController < ApplicationController
     if params[:city]
       @places = Place.where('city LIKE ?', "%#{params[:city]}%")
     else
-      @places = Place.all
+      @places = Place.where(draft: false)
     end
     #if params[:city].present?
     #  @places = Place.where(city: params[:city])

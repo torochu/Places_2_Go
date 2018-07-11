@@ -71,6 +71,14 @@
     <br>
     <%= f.label "適合幾歲小朋友" %>
     <%= f.select "suitable_age", Place::SUITABLE_AGE.map.with_index{|x,i| [x, i]}, {class: 'form-control'} %>
+    <br>
+    <%= f.label "食物評價" %>
+    <%= f.select "food_ranking", Place::FOOD_RANKING.map.with_index{|x,i| [x, i]}, {class: 'form-control'} %>
+    <br>
+    <%= f.label "推薦指數" %>
+    <%= f.select "recommendation", Place::RECOMMENDATION.map.with_index{|x,i| [x, i]}, {class: 'form-control'} %>
+
+
 
 
     <br><br>
