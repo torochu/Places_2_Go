@@ -3,7 +3,15 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   
   namespace :adm do
-    resources :places
+    resources :places do
+      collection do
+        get :published_places
+      end
+
+      member do
+        post :publish_this
+      end
+    end
     resources :users
     resources :likes
   end

@@ -7,13 +7,16 @@
     <thead>
       <tr>
         <td>#</td>
+        <td>待審</td>
         <td>地點名稱</td>
         <td>附設停車</td>
         <td>預約</td>
         <td>附近捷運站</td>
         <td>捷運距離</td>
-        <td>平均消費</td>
+        <td>人均消費</td>
+        <td>低消</td>
         <td>適合幾歲</td>
+        <td>評語</td>
         <td>City</td>
         <td>Lat.</td>
         <td>Lng.</td>
@@ -24,16 +27,19 @@
       <% @places.each do |place| %>
         <tr>
           <td><%= place.id %></td>
+          <td><%= link_to("批准", publish_this_adm_place_path(place), method: :post, class: "btn btn-sm btn-outline-info") %></td>
           <td><%= link_to(place.name, adm_place_path(place)) %></td>
           <td>
             <%= Place::PARKING[place.parking.to_i] %>
             <%# render_parking(place.parking) %>
           </td>
           <td><%= place.booking.nil? ?  " " : place.booking %></td>
-          <td><%= station_nearby %></td>
+          <td><%= place.station_nearby %></td>
           <td><%= Place::TRAIN_DIS[place.train_distance.to_i] %></td>
           <td><%= Place::AVG_COST[place.average_cost.to_i] %></td>
+          <td><%= Place::MIN_ORDER[place.minimum_order.to_i] %></td>
           <td><%= Place::SUITABLE_AGE[place.suitable_age.to_i] %></td>
+          <td><%= truncate(place.comment, length: 17) %></td>
           <td><%= place.city %></td>
           <td><%= place.latitude %></td>
           <td><%= place.longitude %></td>

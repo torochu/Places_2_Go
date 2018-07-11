@@ -31,6 +31,9 @@
       <%= f.select(:district, TaiwanCity.list(@place.city), {include_blank: '--鄉鎮市區--'}, {class: 'city-select'}) %>
       <%= f.text_field :address, class: "form-control" %>
     </div>
+
+    <br>
+    <%= f.input :phone, as: :tel, input_html: { class: 'form-control'} %>
     <br>
     <div class="field">
       add an image....
@@ -62,7 +65,9 @@
     <br>
     <%= f.label "人均價格" %>
     <%= f.select "average_cost", Place::AVG_COST.map.with_index{|x,i| [x, i]}, {class: 'form-control'} %>
-
+    <br>
+    <%= f.label "最低消費" %>
+    <%= f.select "minimum_order", Place::MIN_ORDER.map.with_index{|x,i| [x, i]}, {class: 'form-control'} %>
     <br>
     <%= f.label "適合幾歲小朋友" %>
     <%= f.select "suitable_age", Place::SUITABLE_AGE.map.with_index{|x,i| [x, i]}, {class: 'form-control'} %>
@@ -71,6 +76,10 @@
     <br><br>
     <%= f.label "地點分類" %>
     <%= collection_select(:place, :category_id, Category.all, :id, :name, {prompt: '請選擇分類', class: 'form-control'}) %>
+    <br>
+  
+    <%= f.input :comment, as: :text, label: '評語', input_html: { class: 'form-control' } %>
+    <br>
     <%= f.submit "Submit", :disable_with => 'Submiting...', class: "form-control" %>
   <% end %>
 

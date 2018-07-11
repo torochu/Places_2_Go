@@ -9,8 +9,12 @@ class Adm::PlacesController < ApplicationController
   before_action :admin_required
 
   def index
-    @places = Place.all
+    @places = Place.where(draft: true)
     flash[:info] = "Welcome to dashboard"
+  end
+
+  def published_places
+    @places = Place.where(draft: false)
   end
 
   def new
@@ -40,6 +44,13 @@ class Adm::PlacesController < ApplicationController
     @place = Place.find(params[:id])
     @place.update(place_params)
     redirect_to adm_place_path(@place), notice: "更新完成"
+  end
+
+  def publish_this
+    @place = Place.find(params[:id])
+    @place.to_publish_mode
+
+    redirect_to adm_places_path
   end
   
   

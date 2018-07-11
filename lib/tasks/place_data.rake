@@ -7,7 +7,7 @@ namespace :data do
     Place.delete_all
     puts "Importing places...."
 
-    file_path = "./public/places2go.csv"
+    file_path = "./public/places2go_v2.csv"
 
     CSV.foreach(file_path, headers: true) do |row|
         Place.create!(
